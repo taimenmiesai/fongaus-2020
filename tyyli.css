@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --bg: #f6f3ec;
@@ -233,3 +233,82 @@ table.species { width: 100%; border-collapse: collapse; font-size: .97rem; }
 .mbox dd.sub { font: 600 .82rem var(--sans); color: var(--ink-2); }
 .mbox p { margin: 0; font-size: .85rem; color: var(--ink-2); }
 @media (max-width: 560px) { .mbox dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nav a { font-size: .9rem; } }
+
+/* ===== Taimenmies-blogin tyyli ===== */
+:root {
+  --bg: #fafff7; --surface: #ffffff; --surface-2: #f6f6f3; --ink: #555555; --ink-2: #6f6f6f; --line: #e6e6e1;
+  --deep: #d26a06; --deep-2: #f57c00; --accent: #f57c00; --accent-ink: #b45600; --gold: #c98a00;
+  --shadow: 0 1px 4px rgba(0, 0, 0, .15); --radius: 4px;
+  --serif: "Poppins", system-ui, sans-serif; --sans: "Open Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1c1a; --surface: #262624; --surface-2: #2f2f2c; --ink: #e6e6e1; --ink-2: #b1b1aa; --line: #3a3a36;
+    --deep: #c86400; --deep-2: #ff9a3d; --accent: #ff8f2e; --accent-ink: #ffa556; --gold: #e6b84a; --shadow: 0 1px 4px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1c1a; --surface: #262624; --surface-2: #2f2f2c; --ink: #e6e6e1; --ink-2: #b1b1aa; --line: #3a3a36;
+  --deep: #c86400; --deep-2: #ff9a3d; --accent: #ff8f2e; --accent-ink: #ffa556; --gold: #e6b84a; --shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+body { font-size: 16px; line-height: 1.6; }
+h1, h2, h3, h4 { color: var(--accent-ink); font-weight: 600; letter-spacing: 0; }
+h1 { font-weight: 600; }
+.prose, .month-text, .intro-text { font-size: 15.5px; line-height: 1.7; }
+.btn { border-radius: 3px; background: #dd7c19; font-family: var(--serif); font-weight: 500; }
+.btn:hover { background: #f57c00; }
+
+/* yläpalkki kuten blogissa: valkoinen, tumma teksti */
+.site-head { background: var(--surface); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.brand { color: #333; }
+.brand-txt { color: var(--ink); opacity: 1; }
+.brand-num { color: var(--accent); }
+.nav a { color: #333; font-family: var(--sans); font-weight: 600; border-radius: 3px; }
+.nav a:hover { background: var(--surface-2); color: var(--accent-ink); }
+.nav a[aria-current="page"] { background: transparent; color: var(--accent-ink); box-shadow: inset 0 -2px 0 var(--accent); border-radius: 0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nav a, :root:not([data-theme="light"]) .brand { color: var(--ink); } }
+.subnav { background: #fff3e6; border-top: 1px solid var(--line); }
+.sub-brand { color: var(--accent-ink); font-family: var(--serif); font-weight: 600; }
+.subnav nav a { color: #444; }
+.subnav nav a:hover { background: #ffe3c7; color: var(--accent-ink); }
+.subnav nav a[aria-current="page"] { background: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .subnav { background: #2b2219; } :root:not([data-theme="light"]) .subnav nav a { color: var(--ink); } }
+
+/* hero: valokuva + valkoinen Poppins-otsikko varjolla */
+.hero { background-color: #333; }
+.hero::before { background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.2) 100%); }
+.hero h1 { color: #fff; font-weight: 700; text-shadow: 0 2px 6px rgba(0,0,0,.5); }
+.hero .big { color: #f57c00; }
+.hero .eyebrow { color: #ffb36b; }
+.hero .lede { color: #f1f1f1; }
+.hero-fig figcaption { color: #e0e0e0; }
+
+/* kortit ja laatikot kuten blogin widgetit */
+.card, .scard, .updates, .tip, .tiles div, .chart, .table-wrap, .catch, .gear, .simcard, .pn a, .mbox, .ko-cta, .baitbox, .hg, .marks li, .stats div {
+  border-radius: var(--radius); box-shadow: var(--shadow); border-color: transparent; }
+.stats div { background: var(--surface); }
+.eyebrow { color: var(--ink-2); font-family: var(--sans); }
+.month-name, .card time, .updates time, .tip h3, .pn a span { color: var(--accent-ink); }
+.badge, .alien { background: var(--accent); border-radius: 3px; }
+blockquote.pull, .prose blockquote { border-left: 4px solid var(--accent); background: var(--surface-2); padding: 12px 18px; border-radius: 0 4px 4px 0; }
+.prose blockquote { color: var(--ink); font-style: normal; }
+blockquote.pull { font-family: var(--sans); font-style: italic; font-weight: 400; font-size: 1.15rem; }
+.filters button, .toc a, .toc-v a, .chip, .chip-l { border-radius: 3px; }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip { background: #fff3e6; border-color: #ffd9b3; color: #8a4300; }
+a.chip:hover { border-color: var(--accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip { background: #3a2a1a; border-color: #5a3c1e; color: #ffc48f; } }
+.marks li { border-left: 4px solid var(--accent); }
+.mbox { border-left: 4px solid var(--accent); }
+.ko-cta { border-left: 4px solid var(--accent); }
+.month { border-top-color: var(--line); }
+.month h3, .tech-head h2 { color: var(--accent-ink); }
+.site-foot { background: #333; color: #ddd; }
+.site-foot strong { font-family: var(--serif); color: #fff; }
+.chart .l { stroke: var(--accent); }
+.chart .d { stroke: var(--accent); }
+.chart .a { fill: var(--accent); opacity: .1; }
+.chart .hl { fill: var(--accent); }
+.hookchart .r.rng, .hookchart .r.open, .key i.rng, .key i.open { fill: #5f6b6d; background: #5f6b6d; }
+.ht span { background: var(--accent); }
+.species .star { color: var(--accent); }

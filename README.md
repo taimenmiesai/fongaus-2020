@@ -8,9 +8,10 @@ Sisältö on koottu blogin [Taimenmies](https://taimenmies.blogspot.com/) ennät
 - `index.html` – ennätysvuoden tarina kuukausi kuukaudelta, lajikäyrä ja lehtijutut
 - `lajit.html` – kaikki 57 lajia (päivä, paikka, pyyntitapa), suodatus kuukausittain
 - `vinkit.html` – yhteenveto ja vinkit seuraavalle ennätysyritykselle
+- `kalaopas/` – Fongarin kalaopas: 69 lajin tunnistusvinkit, pyyntitavat, koukkukoot ja syötit
 - `blogi/` – 37 blogitekstiä kokonaisuudessaan kuvineen
 - `kuvat/` – kuvat verkkokäyttöön pienennettyinä
-- `tyyli.css`, `sivu.js` – ulkoasu, kuvien suurennus ja lajilistan suodatus
+- `tyyli.css`, `sivu.js` – ulkoasu (Taimenmies-blogin tyyli), kuvien suurennus ja lajilistan suodatus
 
 Sivusto on pelkkää HTML:ää ja CSS:ää, eikä se tarvitse koontityökaluja.
 
