@@ -33,20 +33,3 @@
   });
 })();
 
-// Kaavioiden työkaluvihjeet
-(function () {
-  var tip = document.querySelector(".ctip");
-  if (!tip) return;
-  function show(e) {
-    var t = e.target.closest && e.target.closest("[data-tip]");
-    if (!t) { tip.hidden = true; return; }
-    var r = t.getBoundingClientRect();
-    tip.textContent = t.getAttribute("data-tip");
-    tip.style.left = Math.min(Math.max(r.left + r.width / 2, 90), window.innerWidth - 90) + "px";
-    tip.style.top = r.top + 30 + "px";
-    tip.hidden = false;
-  }
-  document.addEventListener("mouseover", show);
-  document.addEventListener("touchstart", show, { passive: true });
-  document.addEventListener("scroll", function () { tip.hidden = true; }, { passive: true });
-})();
